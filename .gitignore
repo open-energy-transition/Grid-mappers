@@ -37,5 +37,8 @@ venv/
 #Vscode
 .vscode/
 
+#Pycharm / Idea
+.idea/
+
 #site
 site/
