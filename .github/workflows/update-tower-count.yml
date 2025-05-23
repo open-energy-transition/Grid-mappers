@@ -1,9 +1,10 @@
 name: Update tower count
 
 on:
-  schedule:
-    # every Sunday at 2 UTC
+  workflow_dispatch:    # allows you to “Run workflow” by hand
+  schedule: # every Sunday at 2 UTC
     - cron: '0 2 * * 0'
+
 
 jobs:
   fetch-towers:
