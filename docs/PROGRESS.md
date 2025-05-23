@@ -69,11 +69,13 @@ Here are some [heatmaps](https://yosmhm.neis-one.org/) of the mapping work some 
   </div>
 
   <div class="progress-item">
-    <label>Towers mapped by our team: (will currently take 3 minutes to load)</label>
+    <label>Towers mapped by our team:</label>
     <div class="progress">
       <div class="progress-bar" id="tower-bar"></div>
     </div>
     <span id="tower-count">Loading…</span>
+    <br>
+    <span id="tower-updated" style="font-size:0.8em; color:#666">Last updated: —</span>
   </div>
 </div>
 
@@ -129,56 +131,31 @@ Here are some [heatmaps](https://yosmhm.neis-one.org/) of the mapping work some 
     }
   }
 
-  async function updateTowers() {
-    const towerCountEl = document.getElementById('tower-count');
-    const towerBar     = document.getElementById('tower-bar');
+ async function loadTowerCount() {
+  const towerCountEl   = document.getElementById('tower-count');
+  const towerBar       = document.getElementById('tower-bar');
+  const towerUpdatedEl = document.getElementById('tower-updated');
 
-    towerCountEl.textContent = 'Loading…';
-    towerBar.style.width     = '0%';
+  towerCountEl.textContent   = 'Loading…';
+  towerBar.style.width       = '0%';
+  towerUpdatedEl.textContent = 'Last updated: —';
 
-    try {
-      const q = `
-       [out:json][timeout:400];
-    (
-      node["power"="tower"](user:"Andreas Hernandez");
-      node["power"="tower"](user:"Tobias Augspurger");
-      node["power"="tower"](user:"Mwiche");
-      node["power"="tower"](user:"davidtt92");
-      node["power"="tower"](user:"relaxxe");
-      node["power"="tower"](user: "Russ")(newer:"2025-03-01T00:00:00Z");
-      node["power"="tower"](user: "map-dynartio")(newer:"2025-03-01T00:00:00Z");
-      node["power"="tower"](user: "overflorian")(newer:"2025-03-01T00:00:00Z");
-      node["power"="tower"](user: "nlehuby")(newer:"2025-03-01T00:00:00Z");
-      node["power"="tower"](user: "ben10dynartio")(newer:"2025-03-01T00:00:00Z");
-      node["power"="tower"](user: "InfosReseaux")(newer:"2025-03-01T00:00:00Z");
+  try {
+    const resp = await fetch('/data/tower-count.json');
+    if (!resp.ok) throw new Error(resp.statusText);
+    const { towerCount: count, updated } = await resp.json();
 
-
-    );
-    out count;
-    `.trim();
-    const resp = await fetch('https://overpass-api.de/api/interpreter', {
-        method: 'POST', body: q
-      });
-      if (!resp.ok) throw new Error(resp.statusText);
-      const json = await resp.json();
-      // Overpass returns { elements: [ { type:"count", count:<n> } ] }
-      const el = json.elements?.[0] || {};
-      const count = el.tags?.total
-       ? parseInt(el.tags.total, 10)
-       : (el.count ?? 0);
-
-      towerCountEl.textContent = count.toLocaleString();
-      towerBar.style.width     = Math.min(100, count / TOWER_GOAL * 100) + '%';
-
-      localStorage.setItem('ohmygrid-towers', JSON.stringify({
-        count, ts: Date.now()
-      }));
-    }
-    catch(err) {
-      console.error('Overpass error', err);
-      towerCountEl.textContent = 'Error';
-    }
+    towerCountEl.textContent   = count.toLocaleString();
+    towerBar.style.width       = Math.min(100, count / TOWER_GOAL * 100) + '%';
+    towerUpdatedEl.textContent = `Last updated: ${new Date(updated).toLocaleString()}`;
   }
+  catch(err) {
+    console.error('Error loading tower count', err);
+    towerCountEl.textContent = 'Error';
+    towerUpdatedEl.textContent = '';
+  }
+}
+
     // —— MAIN & CACHE HANDLING ——
   function attemptCacheLoad(id, maxAgeMs) {
     try {
@@ -213,7 +190,7 @@ Here are some [heatmaps](https://yosmhm.neis-one.org/) of the mapping work some 
       document.getElementById('tower-count').textContent = tCache.count.toLocaleString();
       document.getElementById('tower-bar').style.width   = Math.min(100, tCache.count / TOWER_GOAL * 100) + '%';
     } else {
-      updateTowers();
+      loadTowerCount();
     }
 
     // refresh button now refreshes both
@@ -223,7 +200,7 @@ Here are some [heatmaps](https://yosmhm.neis-one.org/) of the mapping work some 
         localStorage.removeItem('ohmygrid-ohsome');
         localStorage.removeItem('ohmygrid-towers');
         updateOhsome();
-        updateTowers();
+        loadTowerCount();
       });
     }
   });

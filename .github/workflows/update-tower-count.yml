@@ -1,0 +1,56 @@
+name: Update tower count
+
+on:
+  schedule:
+    # every Sunday at 2 UTC
+    - cron: '0 2 * * 0'
+
+jobs:
+  fetch-towers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: run-query
+        name: Run Overpass count query
+        run: |
+          cat << 'EOF' > query.overpassql
+          [out:json][timeout:400];
+          (
+            node["power"="tower"](user:"Andreas Hernandez");
+            node["power"="tower"](user:"Tobias Augspurger");
+            node["power"="tower"](user:"Mwiche");
+            node["power"="tower"](user:"davidtt92");
+            node["power"="tower"](user:"relaxxe");
+            node["power"="tower"](user:"Russ")(newer:"2025-03-01T00:00:00Z");
+            node["power"="tower"](user:"map-dynartio")(newer:"2025-03-01T00:00:00Z");
+            node["power"="tower"](user:"overflorian")(newer:"2025-03-01T00:00:00Z");
+            node["power"="tower"](user:"nlehuby")(newer:"2025-03-01T00:00:00Z");
+            node["power"="tower"](user:"ben10dynartio")(newer:"2025-03-01T00:00:00Z");
+            node["power"="tower"](user:"InfosReseaux")(newer:"2025-03-01T00:00:00Z");
+          );
+          out count;
+          EOF
+
+          # run query & capture count
+          COUNT=$(curl -s --data-urlencode "data@query.overpassql" \
+            https://overpass-api.de/api/interpreter \
+            | jq -r '.elements[0].count // .elements[0].tags.total // 0')
+
+          # expose COUNT as an output
+          echo "::set-output name=count::$COUNT"
+
+          # write JSON file
+          mkdir -p docs/data
+          cat << JSON > docs/data/tower-count.json
+          {
+            "towerCount": $COUNT,
+            "updated": "$(date --utc +%Y-%m-%dT%H:%M:%SZ)"
+          }
+          JSON
+
+      - name: Commit & push if changed
+        uses: stefanzweifel/git-auto-commit-action@v6
+        with:
+          commit_message: "chore: weekly tower count (${{ steps.run-query.outputs.count }})"
+          file_pattern: docs/data/tower-count.json
