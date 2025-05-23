@@ -1,0 +1,1196 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="We aim to contribute to mapping countries' electricity grid systems around the world. We strive to improving the power infrastructure data on OpenStreetMap, to enhance global energy system modeling.">
+      
+      
+      
+        <link rel="canonical" href="https://ohmygrid.org/starter-kit/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../map-it/">
+      
+      
+      <link rel="icon" href="../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Starter-Kit Tutorial 🌱 - OhMyGrid</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/landing.css">
+    
+      <link rel="stylesheet" href="../stylesheets/blog.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#get-started-with-openstreetmap-and-open-infrastructure-map" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="OhMyGrid" class="md-header__button md-logo" aria-label="OhMyGrid" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OhMyGrid
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Starter-Kit Tutorial 🌱
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/open-energy-transition/Oh-my-Grid" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OhMyGrid
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  The Initiative 🚀
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Starter-Kit Tutorial 🌱
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../map-it/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Map It! 📍
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../tools/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tools and Strategies 🛠️
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../awesome/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Awesome List 🌟
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../FAQ/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ ⚡
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../impact/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Impact Analysis 🤝
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../progress/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Our Progress 🌐
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../blog/firstrename/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Blog 💭
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="OhMyGrid" class="md-nav__button md-logo" aria-label="OhMyGrid" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    OhMyGrid
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/open-energy-transition/Oh-my-Grid" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OhMyGrid
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Initiative 🚀
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Starter-Kit Tutorial 🌱
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Starter-Kit Tutorial 🌱
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#get-started-with-openstreetmap-and-open-infrastructure-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get started with OpenStreetMap and Open Infrastructure Map 🗺️
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-josm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install JOSM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loading-power-infrastructure-into-josm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loading power infrastructure into JOSM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-map-and-upload-your-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Map and upload your progress
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unfinished-lines-with-osmose-and-the-todo-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unfinished lines with Osmose and the todo Plugin ✅
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map-fast" class="md-nav__link">
+    <span class="md-ellipsis">
+      Map fast
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Mistakes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../map-it/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Map It! 📍
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tools and Strategies 🛠️
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../awesome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Awesome List 🌟
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ ⚡
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../impact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Impact Analysis 🤝
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../progress/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Our Progress 🌐
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Blog 💭
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Blog 💭
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    2025
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            2025
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/firstrename/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Liberate the Grid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<div class="page-headers">
+<h1>Grid Mapping Starter Kit 🌱</h1>
+</div>
+<p>A <a href="https://github.com/open-energy-transition/grid-mapping-starter-kit">starter kit</a> for Electrical Transmission Grid Mapping in OpenStreetMap, combining Osmose and Overpass with JOSM.</p>
+<div style="display: flex; gap: 20px; margin: 20px auto; flex-wrap: wrap;">
+  <img src="../images/kenyamap1.jpg" class="img-border" style="width: 400px;">
+  <img src="../images/starter_map.jpg" class="img-border" style="width: 380px;">
+</div>
+
+<h2 id="get-started-with-openstreetmap-and-open-infrastructure-map"><strong><div class="tools-header">Get started with OpenStreetMap and Open Infrastructure Map 🗺️</div></strong></h2>
+<div style="float: right; margin: 5px 0 20px 20px; width: 350px;">
+  <img src="../images/openinframap-portugal.jpg" class="img-border" style="width: 100%;">
+  <figcaption class="image-caption">Open infrastructure map showing the highly detailed transmission and distribution grid in Portugal.</figcaption>
+</div>
+
+<p>If you don't already have an OpenStreetMap account, <a href="https://www.openstreetmap.org/user/new">create one first</a>. If you're new to OpenStreetMap, now is a good time to learn the basics of editing using the in-browser editor (iD) - find something which is missing from the map in your local area and add it! The <a href="https://wiki.openstreetmap.org">OpenStreetMap Wiki</a> has lots of information about how to map with OpenStreetMap, and you can start by reading the <a href="https://learnosm.org/en/beginner/id-editor/">iD Beginners' Guide</a>. Adding missing power towers or substations can significantly improve mapping progress, as it gives other mappers a clue as to where parts of the entire grid are missing. To quickly check if anything is missing near you, go to the Open Infrastructure Map. Press the 'Find my location' button in the top right corner or enter your town in the search box. See something missing next to you? Map it using your iD editor. Don't worry about making mistakes. Mapping is an iterative process, and the OpenStreetMap community automatically detects anything that is missing. The OpenStreetMap Wiki pages <a href="https://wiki.openstreetmap.org/wiki/Power_networks">The Power Network</a> and <a href="https://wiki.openstreetmap.org/wiki/Key:power">Key:Power</a> provide an overview of how to map different power infrastructure.</p>
+<p><strong>⚠️ Before you start mapping, please find out about the mapping restrictions in the respective country. In some countries, the mapping of transmission lines is not permitted. Get in touch with local users by finding out about <a href="https://wiki.openstreetmap.org/wiki/Power_networks">local projects</a>. ⚠️</strong></p>
+<h2 id="install-josm"><strong><div class="tools-header">Install JOSM <img alt="🚀" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f680.svg" title=":rocket:" /></div></strong></h2>
+<p>JOSM is a more advanced desktop OpenStreetMap editor which is more suitable for power grid mapping.</p>
+<div style="float: right; margin: -25px 20px 0 50px;">
+  <img src="../images/josm_logo.jpg"  width="90">
+</div>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The JOSM Preferences window is accessed through the <code>Edit → Preferences</code> menu on Windows and Linux, and <code>JOSM → Settings</code> on Mac.</p>
+</div>
+<p>1. Install <a href="https://www.java.com/en/download/help/download_options.html">Java</a> on your device if not installed. <br>
+2. Install <a href="https://josm.openstreetmap.de/">JOSM</a> on your device.<br>
+3. (Optional) If you want preconfigured preferences, download this preferences.xml <a href="https://github.com/open-energy-transition/grid-mapping-starter-kit/blob/main/josm-config/preferences.xml">file</a> and paste it in the correct folder on your device. The <a href="https://josm.openstreetmap.de/wiki/Help/Preferences">JOSM wiki</a> provides details on where to place it.<!-- No space here -->
+4. Further instructions on how to install and use JOSM on your device can be found at <a href="https://learnosm.org/en/josm/start-josm/">learnOSM</a>.<br> </p>
+<p><img 
+  src="../images/mapcss_tutorial.jpg" 
+  class="img-border float-right" 
+  alt="Clickmap screenshot"
+  width="300">
+4. Add our custom paint style which you can find <a href="https://github.com/open-energy-transition/grid-mapping-starter-kit/blob/main/josm-config/transmission_grid_mapping_style.mapcss">here</a>. To add to JOSM, go to <code>Preferences → Map Paint Styles</code> and press the "+" in the top right. Then you can paste this <a href="https://raw.githubusercontent.com/open-energy-transition/grid-mapping-starter-kit/refs/heads/main/josm-config/transmission_grid_mapping_style.mapcss">URL</a> or the file saved on your device. We recommend using this MapCSS file for <a href="https://raw.githubusercontent.com/open-energy-transition/grid-mapping-starter-kit/refs/heads/main/josm-config/low_density_transmission_grid_mapping_style.mapcss">low-density grids</a> and this one for <a href="https://raw.githubusercontent.com/open-energy-transition/grid-mapping-starter-kit/refs/heads/main/josm-config/high_density_transmission_grid_mapping_style.mapcss">high-density grids</a>. You can use <a href="https://github.com/open-energy-transition/color_my_map">ColorMyMap!</a>, our MapCSS Generator tool, to easily adapt the MapCSS file to fit any special requirements you might have.
+Below is a high level legend of the color styles of the mapcss<br></p>
+<div style="margin: 20px 0;">
+<h4>MapCSS Style Legend</h4>
+<div style="max-width: 100%; overflow-x: auto;">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700" font-family="Arial, sans-serif">
+  <!-- Background -->
+  <rect width="800" height="700" fill="#e6e6e6" rx="10" ry="10"/>
+
+  <!-- Title -->
+  <text x="400" y="40" font-size="24" font-weight="bold" text-anchor="middle">Transmission Grid Mapping Legend</text>
+
+  <!-- Section Titles -->
+  <text x="150" y="78" font-size="18" font-weight="bold" fill="green">Power Lines by Voltage</text>
+  <text x="550" y="78" font-size="18" font-weight="bold" fill="green">Node Types</text>
+  <text x="150" y="323" font-size="18" font-weight="bold" fill="green">Line Properties</text>
+  <text x="550" y="323" font-size="18" font-weight="bold" fill="green">Power Stations &amp; Areas</text>
+  <text x="350" y="523" font-size="18" font-weight="bold" fill="green">Generator Sources</text>
+
+  <!-- Power Lines by Voltage -->
+  <g transform="translate(60, 100)">
+    <!-- Under 132kV -->
+    <line x1="0" y1="25" x2="80" y2="25" stroke="BurlyWood" stroke-width="4" stroke-linecap="round"/>
+    <text x="90" y="30" font-size="14">Under 132kV</text>
+
+    <!-- 132-220kV -->
+    <line x1="0" y1="55" x2="80" y2="55" stroke="Coral" stroke-width="4" stroke-linecap="round"/>
+    <text x="90" y="60" font-size="14">132-220kV</text>
+
+    <!-- 220-310kV -->
+    <line x1="0" y1="85" x2="80" y2="85" stroke="IndianRed" stroke-width="4" stroke-linecap="round"/>
+    <text x="90" y="90" font-size="14">220-310kV</text>
+
+    <!-- 310-550kV -->
+    <line x1="0" y1="115" x2="80" y2="115" stroke="DarkViolet" stroke-width="4" stroke-linecap="round"/>
+    <text x="90" y="120" font-size="14">310-550kV</text>
+
+    <!-- >550kV -->
+    <line x1="0" y1="145" x2="80" y2="145" stroke="DarkTurquoise" stroke-width="4" stroke-linecap="round"/>
+    <text x="90" y="150" font-size="14">Above 550kV</text>
+
+    <!-- No voltage -->
+    <line x1="0" y1="175" x2="80" y2="175" stroke="white" stroke-width="4" stroke-linecap="round"/>
+    <rect x="-2" y="173" width="84" height="4" stroke="black" stroke-width="0.5" fill="none"/>
+    <text x="90" y="180" font-size="14">No voltage data</text>
+  </g>
+
+  <!-- Node Types -->
+  <g transform="translate(460, 100)">
+    <!-- Tower -->
+    <rect x="0" y="15" width="20" height="20" fill="blue" stroke="black" stroke-width="0.5"/>
+    <text x="30" y="30" font-size="14">Tower</text>
+
+    <!-- Pole -->
+    <rect x="0" y="45" width="20" height="20" fill="black" stroke="black" stroke-width="0.5"/>
+    <text x="30" y="60" font-size="14">Pole</text>
+
+    <!-- Substation -->
+    <rect x="0" y="75" width="20" height="20" fill="white" stroke="black" stroke-width="1"/>
+    <text x="30" y="90" font-size="14">Substation</text>
+
+    <!-- Transmission Substation -->
+    <rect x="0" y="105" width="20" height="20" fill="#DC143C" stroke="#DC143C" stroke-width="1.5"/>
+    <text x="30" y="120" font-size="14">Transmission Substation</text>
+
+    <!-- Distribution Substation -->
+    <rect x="0" y="135" width="20" height="20" fill="#008F11" stroke="#008F11" stroke-width="1.5"/>
+    <text x="30" y="150" font-size="14">Distribution Substation</text>
+
+    <!-- Generator -->
+    <rect x="0" y="165" width="20" height="20" fill="yellow" stroke="black" stroke-width="0.5"/>
+    <text x="30" y="180" font-size="14">Generator</text>
+
+    <!-- Switch -->
+    <rect x="0" y="195" width="20" height="20" fill="red" stroke="black" stroke-width="0.5"/>
+    <text x="30" y="210" font-size="14">Switch</text>
+  </g>
+
+  <!-- Line Properties -->
+  <g transform="translate(60, 345)">
+    <!-- Cable -->
+    <line x1="0" y1="25" x2="80" y2="25" stroke="#888888" stroke-width="4" stroke-dasharray="9,9"/>
+    <text x="90" y="30" font-size="14">Cable</text>
+
+    <!-- Multi-circuit line -->
+    <line x1="0" y1="55" x2="80" y2="55" stroke="DarkViolet" stroke-width="4"/>
+    <line x1="0" y1="55" x2="80" y2="55" stroke="#555555" stroke-width="8" stroke-dasharray="2,14"/>
+    <text x="90" y="60" font-size="14">Multi-circuit Line</text>
+
+    <!-- Proposed/Construction -->
+    <line x1="0" y1="85" x2="80" y2="85" stroke="IndianRed" stroke-width="4" stroke-dasharray="8,4"/>
+    <text x="90" y="90" font-size="14">Proposed/Construction</text>
+
+    <!-- Bridge -->
+    <line x1="0" y1="115" x2="80" y2="115" stroke="#0000FF" stroke-width="7"/>
+    <line x1="0" y1="115" x2="80" y2="115" stroke="Coral" stroke-width="4"/>
+    <text x="90" y="120" font-size="14">Bridge Crossing</text>
+
+    <!-- Tunnel -->
+    <line x1="0" y1="145" x2="80" y2="145" stroke="#964B00" stroke-width="7"/>
+    <line x1="0" y1="145" x2="80" y2="145" stroke="Coral" stroke-width="4"/>
+    <text x="90" y="150" font-size="14">Tunnel Crossing</text>
+  </g>
+
+  <!-- Power Stations & Areas -->
+  <g transform="translate(460, 345)">
+    <!-- Power Plant -->
+    <rect x="0" y="15" width="30" height="20" fill="black" stroke="black" stroke-width="1.5"/>
+    <text x="40" y="30" font-size="14">Power Plant</text>
+
+    <!-- Industrial Area -->
+    <rect x="0" y="45" width="30" height="20" fill="none" stroke="darkorange" stroke-width="2" stroke-dasharray="4,4"/>
+    <text x="40" y="60" font-size="14">Industrial Area</text>
+
+    <!-- Busbar -->
+    <line x1="0" y1="75" x2="30" y2="75" stroke="#888888" stroke-width="4"/>
+    <line x1="0" y1="75" x2="30" y2="75" stroke="#FFD800" stroke-width="6"/>
+    <text x="40" y="80" font-size="14">Busbar</text>
+
+    <!-- Bay -->
+    <line x1="0" y1="105" x2="30" y2="105" stroke="#888888" stroke-width="4"/>
+    <line x1="0" y1="105" x2="30" y2="105" stroke="#555555" stroke-width="6"/>
+    <text x="40" y="110" font-size="14">Bay</text>
+  </g>
+
+  <!-- Generator Sources -->
+  <g transform="translate(200, 540)">
+    <!-- Nuclear -->
+    <circle cx="15" cy="15" r="15" fill="yellow" stroke="black" stroke-width="0.5"/>
+    <text x="15" y="45" font-size="14" text-anchor="middle">Nuclear</text>
+
+    <!-- Wind -->
+    <circle cx="65" cy="15" r="15" fill="lightblue" stroke="black" stroke-width="0.5"/>
+    <text x="65" y="45" font-size="14" text-anchor="middle">Wind</text>
+
+    <!-- Hydro -->
+    <circle cx="115" cy="15" r="15" fill="blue" stroke="black" stroke-width="0.5"/>
+    <text x="115" y="45" font-size="14" text-anchor="middle">Hydro</text>
+
+    <!-- Solar -->
+    <circle cx="165" cy="15" r="15" fill="orange" stroke="black" stroke-width="0.5"/>
+    <text x="165" y="45" font-size="14" text-anchor="middle">Solar</text>
+
+    <!-- Coal -->
+    <circle cx="215" cy="15" r="15" fill="gray" stroke="black" stroke-width="0.5"/>
+    <text x="215" y="45" font-size="14" text-anchor="middle">Coal</text>
+
+    <!-- Gas -->
+    <circle cx="265" cy="15" r="15" fill="lightgreen" stroke="black" stroke-width="0.5"/>
+    <text x="265" y="45" font-size="14" text-anchor="middle">Gas</text>
+
+    <!-- Biomass -->
+    <circle cx="315" cy="15" r="15" fill="green" stroke="black" stroke-width="0.5"/>
+    <text x="315" y="45" font-size="14" text-anchor="middle">Biomass</text>
+
+    <!-- Oil -->
+    <circle cx="365" cy="15" r="15" fill="black" stroke="white" stroke-width="0.5"/>
+    <text x="365" y="45" font-size="14" text-anchor="middle">Oil</text>
+  </g>
+
+</svg>
+</div>
+</div>
+
+<p>5. Download this <a href="https://github.com/open-energy-transition/grid-mapping-starter-kit/blob/main/josm-config/transmission_grid_mapping_template.joz" target="_blank">template</a> session, and in JOSM go to File&gt;Open and open the .joz file. <br></p>
+<p>6. Create an OSM <a href="https://www.openstreetmap.org/user/new?cookie_test=true">account</a> if you don't have one. Once you do, go to <code>Preferences → OSM Server</code> and press authorise now. Login with your OSM account, and authorise. Your account is now linked to JOSM on your device. 
+<img alt="❗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2757.svg" title=":exclamation:" /> Be aware that your token will be stored in your local preferences.xml file. Do not share your preferences file with anyone. <br></p>
+<p>7. Finally, activate "expert mode" in <code>View → Expert mode</code>. This will enable using Overpass API. <br></p>
+<p>8. Make sure remote control is enabled in <code>Preferences → Remote Control</code>. You will need this enabled for the next step!</p>
+<p><img 
+  src="../images/clickmap.jpg" 
+  class="img-border float-right" 
+  alt="Clickmap screenshot"
+  width="300"></p>
+<h2 id="loading-power-infrastructure-into-josm"><strong><div class="tools-header">Loading power infrastructure into JOSM <img alt="📥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4e5.svg" title=":inbox_tray:" /></div></strong></h2>
+<p>Make sure remote control is enabled and ad-blocker disabled, and then go to the start mapping <a href="https://ohmygrid.org/map-it/">page</a>. Here you can click on the country you want to map, and it will directly open JOSM and load the data of that country. Use the "Default" to pull the data. <br></p>
+<h2 id="how-to-map-and-upload-your-progress"><strong><div class="tools-header">How to Map and upload your progress <img alt="📤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4e4.svg" title=":outbox_tray:" /></div></strong></h2>
+<p><img 
+  src="../images/presets.jpg" 
+  class="img-border float-right" 
+  alt="Clickmap screenshot"
+  width="300">
+1. For ease of mapping, customise your top toolbar with presets if you have not used the default preferences. Right click the toolbar and choose <code>Configure toolbar</code>, then select <code>Presets → Man Made → Man Made/Power</code> and add power towers, power portals and other presets for your mapping acticity.
+2. Start Mapping. Read more about the general mapping process in JOSM. Place nodes (eg.power towers, power portals) or place polygons to delimit an area (eg. substation, generator), and press on the preset structure you want it to be. If you want to learn how to map fast, go to the advanced kit tab! <br> 
+<img 
+  src="../images/startmapping.jpg" 
+  class="img-border float-right" 
+  alt="Clickmap screenshot"
+  width="300">
+<img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":pencil:" /> Example: As seen in the image, the red polygon is a substation which is mapped by adding nodes that are connected to each other and tagged as a substation. <br></p>
+<p>3. Whilst having the OpenStreetMap layer activated, press the green Upload arrow. Avoid ignoring validation results. The only acceptable warning when uploading data is "Possible missing line support node within power line". When you make an edit, please use the <strong>#ohmygrid</strong> in the changeset to help the initiative!</p>
+<h2 id="unfinished-lines-with-osmose-and-the-todo-plugin"><strong><div class="tools-header">Unfinished lines with Osmose and the todo Plugin ✅</div></strong></h2>
+<p><img 
+  src="../images/todo.jpg" 
+  class="img-border float-right" 
+  alt="Clickmap screenshot"
+  width="300">
+<img alt="📝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" title=":pencil:" /> Example
+A simple but very efficient way of mapping the network is the continuation of “Unfinished Transmission Lines”:</p>
+<ol>
+<li>Download the <a href="https://ohmygrid.org/map-it/">Unfinished Power Transmission lines (Class 2) via Osmose</a> for your country.</li>
+<li>Drag and drop the downloaded geojson file into JSOM.</li>
+<li>Download the todo plugin for JSOM. Edit --&gt; Preferences. Search for todo, mark it and press OK. Press Windows --&gt; todo list to show the todo list window. </li>
+<li>Press STRG+A (CTRL + A or COMMAND + A)  to select all issues in the new layer. Press the Add in the todo plugin window.</li>
+<li>Switch back to the OSM data layer.</li>
+<li>You can now systematically step through all the issues by pressing Mark.  </li>
+</ol>
+<h2 id="map-fast"><div class="tools-header">Map fast  <img alt="📌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4cc.svg" title=":pushpin:" /></div></h2>
+<p>If you want to be able to map efficiently and fast, you will need to know how to correctly place towers and power lines. This will save you loads of time:</p>
+<ol>
+<li>Press <code>A</code> and draw nodes as you follow the towers. This will create a long line of untagged nodes, all connected by a untagged way.</li>
+<li>Click on the way, and tag it as a power line.</li>
+<li>Click on the way again, and <code>control+F</code> to open up search. Then paste in the bar: <code>child selected type:node AND untagged</code>. This will select all untagged nodes of the way.</li>
+<li>Then you can tag all the selected nodes as towers in one go.</li>
+<li>Use the preset power tower or poles to set all nodes at once.</li>
+<li>If you ever lose this query, click the right arrow on the search window and select it from your history.</li>
+</ol>
+<h2 id="common-mistakes"><strong><div class="tools-header">Common Mistakes <img alt="📛" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4db.svg" title=":name_badge:" /></div></strong></h2>
+<p>1. Do not use the interactive map or the default queries for distribution grid mapping. The Overpass Turbo script provided with this starter kit and present in the interactive map is optimised for transmission grid mapping. Lines on towers below 90 kV are not visualised in JOSM and should not be mapped with the standard configuration of this script. <br></p>
+<p>2. Not reading about <a href="https://wiki.openstreetmap.org/wiki/Good_practice">good practices</a>.<br></p>
+<p>3. When you leave the downloaded area, you may find transmission grids that do not appear to have been mapped. Actually, they were not downloaded to JOSM and you map them 2 times. To avoid this always be aware of the country boundary and be careful when crossing highlighted dashed orange lines. Due to the design of Overpass Turbo, some elements such as power lines may still be visible. across the border, but other objects such as substations will appear as if they have not yet been mapped. <br></p>
+<p>4. Mapping beyond your experience is something you should avoid. Mapping is an iterative process and you should not expect to be able to finish all the details you are mapping. If you cannot map with a high degree of certainty, leave it to local mappers, better satellite imagery or experienced grid mappers.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer"> Creative Commons Attribution 4.0 International License   </a> -  <a href="https://ohmygrid.org/privacy-policy/"> Read our Privacy Policy</a>
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.indexes", "toc.integrate", "search.highlight", "search.suggest", "navigation.top", "content.image.zoom"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../js/umami.js"></script>
+      
+    
+  </body>
+</html>

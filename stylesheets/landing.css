@@ -1,0 +1,396 @@
+/* ==== GENERAL/BODY (Optional, but good for base font) ==== */
+body {
+    font-family: sans-serif; /* Or your preferred font */
+}
+
+/* Increased Specificity for Header Background - Try this if previous didn't work */
+body.landing-page header.md-header {
+  background-color: #e9f5e9 !important; /* Match the hero section background color */
+  box-shadow: none !important; /* Optional: remove shadow if it looks better */
+  /* Add !important for temporary debugging ONLY if nothing else works */
+  /* background-color: #e9f5e9 !important; */
+  /* box-shadow: none !important; */
+}
+
+
+/* ==== HERO SECTION ==== */
+.hero-section {
+  min-height: 60vh;
+  background-color: #e9f5e9; /* This color determines the header background */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 2rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-content-left {
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
+}
+
+.hero-content-right {
+  flex-shrink: 0;
+  text-align: center;
+}
+
+/* Increased Specificity for Hero Title (from previous step) */
+.hero-section .hero-title {
+  font-size: 2.5rem;
+  color: #54a36a;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-logo {
+    /* pick the exact pixel width you want: */
+    width: 400px !important;
+    /* undo any “max-width:100%” from the theme */
+    max-width: none !important;
+    height: auto !important;
+    display: block;
+    margin: 0; /* so it doesn’t accidentally center itself */
+  }
+
+.mission-statement {
+  font-size: 1.5rem;
+  color: #333;
+  max-width: 100%;
+  margin: 0 auto 2rem;
+  line-height: 1.4;
+  font-weight: 500;
+  text-align: left !important;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+  margin-top: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #2a6d3c;
+  text-decoration: none;
+  transition: all 0.3s;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  background: white;
+  border: 1px solid #ddd;
+  font-weight: 600;
+}
+
+.social-links a:hover {
+  color: #54a36a;
+  transform: translateY(-2px);
+  background: #f8f9fa;
+  box-shadow: 0 4px 8px rgba(42, 109, 60, 0.1);
+  border-color: #ccc;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* — Primary “Start Mapping!” button — */
+.primary-link {
+  /* push the social-links further down */
+  margin-bottom: 1.5rem;
+}
+
+.primary-link a {
+  /* same base style as .social-links a, but slightly larger */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;           /* a bit more space between icon & text */
+  padding: 0.6rem 1.3rem; /* increase click‐area */
+  font-size: 1.1rem;      /* slightly bigger text */
+  font-weight: 700;       /* maybe bolder? */
+  color: #ffffff;         /* invert colors if you like—optional */
+  background: #54a36a;    /* solid brand color for emphasis */
+  border: none;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.primary-link a:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.primary-icon {
+  font-size: 1.2rem;    /* bump it up a bit */
+  line-height: 1;       /* prevent weird vertical alignment */
+}
+
+/* ==== INITIATIVE SECTION ==== */
+.initiative-section {
+  padding: 1rem 2rem;
+  background-color: #f8f9fa;
+}
+
+.initiative-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.initiative-content h2 {
+  color: #2a6d3c;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.initiative-content p {
+  color: #4a5568;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+/* Style for the quote */
+.initiative-content blockquote {
+  margin: 1.5rem auto;
+  padding-left: 1.5rem;
+  border-left: 4px solid #2a6d3c;
+  font-style: italic;
+  color: #555;
+  max-width: 700px;
+  text-align: left;
+}
+
+/* Style for the reference */
+.initiative-content p.reference {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: #777;
+  text-align: center;
+  font-style: italic;
+}
+
+.initiative-illustration {
+  max-width: 200px;
+  margin: 1rem auto 0;
+  width: 60%; /* Make it responsive up to max-width */
+}
+
+
+/* ==== GET INVOLVED SECTION ==== */
+.get-involved-section {
+  padding: 1rem 2rem;
+  background-color: #e9f5e9;
+  text-align: center;
+}
+
+.get-involved-section h2 {
+  color: #2a6d3c;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.get-involved-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+.get-involved-card {
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.get-involved-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(42, 109, 60, 0.15);
+}
+
+.get-involved-card h3 {
+  color: #2a6d3c;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.get-involved-card p {
+  color: #4a5568;
+  line-height: 1.6;
+  font-weight: 400;
+  flex-grow: 1;
+}
+
+/* ==== WHO WE ARE SECTION ==== */
+.who-we-are-section {
+  padding: 0.5rem 2rem; /* Increased top/bottom padding */
+  background-color: #f8f9fa; /* Grey background to alternate */
+  text-align: center;
+}
+
+.who-we-are-section h2 {
+  color: #2a6d3c; /* Match other section titles */
+  font-size: 2.5rem;
+  margin-bottom: 1rem; /* Reduced bottom margin */
+  font-weight: 700;
+}
+
+.who-we-are-section .lead-statement {
+  max-width: 800px;
+  margin: 0 auto 2.5rem auto; /* Center align and add bottom margin */
+  color: #4a5568; /* Match paragraph text color */
+  line-height: 1.7;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.partners-grid {
+  display: grid;
+  /* Adjust columns for different screen sizes */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+  gap: 2.5rem; /* Increased gap */
+  max-width: 1000px; /* Limit overall width */
+  margin: 2rem auto 0; /* Center the grid */
+  align-items: center; /* Vertically align items if they have different heights */
+}
+
+.partner-item {
+  text-align: center; /* Center content within each item */
+}
+
+.partner-item a {
+  text-decoration: none;
+  color: inherit; /* Inherit text color */
+  display: flex; /* Use flexbox for layout within the link */
+  flex-direction: column; /* Stack logo and name vertically */
+  align-items: center; /* Center items horizontally */
+  gap: 0.8rem; /* Space between logo and name */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.partner-item a:hover {
+  transform: translateY(-4px); /* Slight lift on hover */
+}
+
+.partner-logo {
+  max-height: 80px; /* Control maximum logo height */
+  max-width: 100%;  /* Ensure logo fits within its container */
+  height: auto;     /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure the logo scales nicely without distortion */
+}
+
+.partner-logo-smaller {
+  max-height: 50px; /* Control maximum logo height */
+  max-width: 100%;  /* Ensure logo fits within its container */
+  height: auto;     /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure the logo scales nicely without distortion */
+}
+
+
+
+
+/* ==== MEDIA QUERIES (Adjustments for smaller screens) ==== */
+@media (max-width: 768px) {
+  .hero-section {
+      flex-direction: column-reverse;
+      text-align: center;
+      justify-content: center;
+      padding: 3rem 1rem;
+  }
+
+  .hero-content-left {
+      text-align: center;
+      max-width: 100%;
+  }
+
+  .hero-content-right {
+      margin-bottom: 2rem;
+  }
+
+  .hero-section .hero-title {
+      font-size: 2.5rem;
+  }
+
+  .mission-statement {
+    font-size: 1.2rem;
+  }
+
+  .social-links {
+      justify-content: center;
+      gap: 0.8rem;
+  }
+
+  .social-links a {
+      padding: 0.5rem 1rem;
+  }
+
+  .initiative-content h2,
+  .get-involved-section h2 {
+      font-size: 2rem;
+  }
+
+  .initiative-illustration {
+      max-width: 80%;
+  }
+
+  .get-involved-grid {
+      grid-template-columns: 1fr;
+  }
+   /* Mobile Specificity for Header Background */
+   body.landing-page header.md-header {
+     background-color: #e9f5e9; /* Apply on mobile too */
+     box-shadow: none;
+   }
+}
+
+/* ==== MEDIA QUERIES (Additions/Adjustments for Who We Are) ==== */
+@media (max-width: 768px) {
+  .who-we-are-section h2 {
+      font-size: 2rem; /* Match other mobile titles */
+  }
+
+  .who-we-are-section .lead-statement {
+      font-size: 1rem; /* Slightly smaller lead text on mobile */
+      margin-bottom: 2rem;
+  }
+
+  .partners-grid {
+    /* Adjust grid for smaller screens - maybe fewer columns */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2rem; /* Slightly smaller gap */
+  }
+
+  .partner-logo {
+    max-height: 60px; /* Smaller logos on mobile */
+  }
+
+}
+
+@media (max-width: 480px) {
+    .partners-grid {
+    /* Stack items in two columns on very small screens */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+

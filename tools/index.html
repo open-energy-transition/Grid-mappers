@@ -1,0 +1,1200 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="We aim to contribute to mapping countries' electricity grid systems around the world. We strive to improving the power infrastructure data on OpenStreetMap, to enhance global energy system modeling.">
+      
+      
+      
+        <link rel="canonical" href="https://ohmygrid.org/tools/">
+      
+      
+        <link rel="prev" href="../map-it/">
+      
+      
+        <link rel="next" href="../awesome/">
+      
+      
+      <link rel="icon" href="../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Tools and Strategies 🛠️ - OhMyGrid</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/landing.css">
+    
+      <link rel="stylesheet" href="../stylesheets/blog.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#osmose-per-country-integrated-in-map-it" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="OhMyGrid" class="md-header__button md-logo" aria-label="OhMyGrid" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OhMyGrid
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tools and Strategies 🛠️
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/open-energy-transition/Oh-my-Grid" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OhMyGrid
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  The Initiative 🚀
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../starter-kit/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Starter-Kit Tutorial 🌱
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../map-it/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Map It! 📍
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tools and Strategies 🛠️
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../awesome/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Awesome List 🌟
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../FAQ/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ ⚡
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../impact/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Impact Analysis 🤝
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../progress/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Our Progress 🌐
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../blog/firstrename/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Blog 💭
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="OhMyGrid" class="md-nav__button md-logo" aria-label="OhMyGrid" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    OhMyGrid
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/open-energy-transition/Oh-my-Grid" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    OhMyGrid
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Initiative 🚀
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../starter-kit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Starter-Kit Tutorial 🌱
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../map-it/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Map It! 📍
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Tools and Strategies 🛠️
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tools and Strategies 🛠️
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#osmose-per-country-integrated-in-map-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      Osmose per country (integrated in Map It📍)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Osmose per country (integrated in Map It📍)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-osmose" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Osmose?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use-the-osmose-per-country-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to use the Osmose per country tool
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-energy-monitor-integrated-in-map-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      Global Energy Monitor (integrated in Map It 📍)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Global Energy Monitor (integrated in Map It 📍)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use-the-gem-power-plants-per-country-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to use the GEM power plants per country tool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use-the-gem-power-plants-per-country-tool_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to use the GEM power plants per country tool
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#searching-and-using-fixme-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Searching and using fixme tags
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-and-maps-as-hint-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data and maps as hint layers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-infrastructure-map-nighttime-lights-and-osmose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open Infrastructure Map - Nighttime Lights and Osmose
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#find-new-lines-that-branch-off-from-substations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Find new lines that branch off from substations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#online-investigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Online investigation 🔍
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-mapcss-to-locate-holes-in-the-grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the mapcss to locate "holes" in the grid
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openstreetmap-and-wikidata-comparison-tool-integrated-in-map-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenStreetMap and Wikidata comparison tool (integrated in Map It 📍)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OpenStreetMap and Wikidata comparison tool (integrated in Map It 📍)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use-the-osmwikidata-powerplant-comparison-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to use the OSM‑Wikidata powerplant comparison tool
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downloading-transmission-data-of-an-area-near-a-border" class="md-nav__link">
+    <span class="md-ellipsis">
+      Downloading transmission data of an area near a border 📥
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bing-attribution-issue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bing attribution issue ⛔
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#google-maps-substations" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚫 Google Maps substations 🚫
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../awesome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Awesome List 🌟
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ ⚡
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../impact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Impact Analysis 🤝
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../progress/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Our Progress 🌐
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Blog 💭
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Blog 💭
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    2025
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            2025
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/firstrename/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Liberate the Grid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<div class="page-headers">
+<h1>Useful Grid Mapping Tools </h1>
+</div>
+<p>The following strategies and tooles will help you to extend the existing transmission grid networks in OpenStreetMap. In general, the larger the tower and substation, the higher the voltage and therefore the greater the importance to the network. Priority should therefore be given to large, high-voltage infrastructure first. The easiest way to start mapping the transmission network is to find the location of missing towers with the help of osmose.</p>
+<h2 id="osmose-per-country-integrated-in-map-it"><div class="tools-header">Osmose per country (integrated in Map It📍)</div></h2></h2>
+<div style="float: right; margin: 5px 0 20px 20px; width: 350px;">
+    <img src="../images/osmosenamib.jpg" class="img-border" alt="Osmose example">
+    <figcaption class="image-caption">Osmose will provide you with a GeoJSON file containing the power issues you selected for the country you specified. In this case, it is Namibia. </figcaption>
+</div>
+
+<p>This tool is integrated in <a href="https://ohmygrid.org/map-it/">Map It📍</a>, but can also be found at <a href="https://open-energy-transition.github.io/osmose_per_country/">this</a> front end interface. The tool allows fetching data on gaps in the OSM data through the OSMOSE API on a country level.</p></p>
+<h3 id="what-is-osmose">What is Osmose?</h3>
+<p><a href="https://osmose.openstreetmap.fr/en/map/">Osmose-QA</a> is a quality assurance tool that detects issues in OpenStreetMap data". These include different classes of issues, such as "unfinished power transmission lines.</p>
+<h3 id="how-to-use-the-osmose-per-country-tool">How to use the Osmose per country tool</h3></h3>
+<ol>
+<li>Click on the Osmose issues button in <a href="https://ohmygrid.org/map-it/">Map It📍</a> or go to the tool interface <a href="https://open-energy-transition.github.io/osmose_per_country/">website</a>.</li>
+<li>In <a href="https://ohmygrid.org/map-it/">Map It📍</a>, you can simply choose the issue you want to look at, and then click on a country/region. This will download a geojson file for you which you can open in JOSM and use as a hint layer
+Tip: On the tool website, certain countries have different names associated, so to fetch the data for the entire country use an asterisk (wildcard) like: <code>France*</code></li>
+</ol>
+<h2 id="global-energy-monitor-integrated-in-map-it"><div class="tools-header"> Global Energy Monitor (integrated in Map It 📍)</div></h2></h2>
+<p><a href="https://github.com/open-energy-transition/gem_per_country">GEM per Country Power Tracker web application</a> - This tool is integrated in Map It📍, and it allows users to preview and download GeoJSON data for global power plants in the <a href="https://globalenergymonitor.org">Global Energy Monitor</a> database filtered by country and power plant status.</p>
+<div style="float: right; margin: 5px 0 20px 20px; width: 350px;">
+    <img src="../images/gem_angola.jpg" class="img-border" alt="GEM Angola Data Example in JOSM">
+  <figcaption class="image-caption">Global Energy Monitor power plants(red) in relation to the grid data(green) for Angola</figcaption>
+</div>
+
+<h3 id="how-to-use-the-gem-power-plants-per-country-tool">How to use the GEM power plants per country tool</h3></h3>
+<ol>
+<li>Click on the Global Energy Monitor Power Plant button in <a href="https://ohmygrid.org/map-it/">Map It📍</a> or go to the <a href="https://open-energy-transition.github.io/gem_per_country/">website</a>.</li>
+<li>In <a href="https://ohmygrid.org/map-it/">Map It📍</a>, you can simply choose the issue you want to look at, and then click on a country/region. This will download a geojson file for you.</li>
+<li>On the website, type the name of the country you want data for. Press preview, and download the geojson file.</li>
+<li>You can open this geojson file in JOSM, where you will be able to see all power plants from the GEM database.</li>
+</ol>
+<h3 id="how-to-use-the-gem-power-plants-per-country-tool_1">How to use the GEM power plants per country tool</h3></h3>
+<ol>
+<li>Click on the Global Energy Monitor Power Plant button in <a href="https://ohmygrid.org/map-it/">Map It📍</a> or go to the <a href="https://open-energy-transition.github.io/gem_per_country/">website</a>.</li>
+<li>In Map It📍, you can simply choose the issue you want to look at, and then click on a country/region. This will download a geojson file for you.</li>
+<li>On the website, type the name of the country you want data for. Press preview, and download the geojson file.</li>
+<li>You can open this geojson file in JOSM, where you will be able to see all power plants from the GEM database.</li>
+</ol>
+<h2 id="searching-and-using-fixme-tags"><div class="tools-header"> Searching and using fixme tags</div></h2></h2>
+<p>OpenStreetMap allows mappers to quickly mark an object that seems to be wrong and needs fixing using the <a href="https://wiki.openstreetmap.org/wiki/Key:fixme">Key:fixme</a> tag. For example, you can write <code>fixme=wrong voltage</code> if you think the voltage on a line is incorrect, but you don't know the correct value. A small F will then be visible on the edge of the symbol to indicate the fixme tag. Stepping through all the <code>fixme</code> tags in a country is also a great way to search for errors in the grid that you can try to fix. We recommend using the <code>todo list</code> plugin for this.</p>
+<div style="float: right; margin: 5px 0 20px 20px; width: 350px;">
+    <img src="../images/fixme.jpg" class="img-border" alt="Fixme tags loaded in the todo list.">
+  <figcaption class="image-caption">Fixme tags loaded in the todo list.</figcaption>
+</div>
+
+<ol>
+<li>Download the grid you want to look into using at the <a href="https://ohmygrid.org/map-it/">Map It📍</a> page.</li>
+<li>Press <code>STRG+F</code>and search for <code>fixme=*</code>.</li>
+<li>In the todo list window press <code>Add</code>.</li>
+<li>After you fixed and issues please remove the fixme tag.</li>
+</ol>
+<h2 id="data-and-maps-as-hint-layers"><div class="tools-header">Data and maps as hint layers</div></h2></h2>
+<p>In order to map more effectively, it is recommended to try and find maps and datasets that can help you find power lines, substations and power plants. National transmission system operators sometimes have publicly available maps, which can help you visualise the current state of the grid, and locate what is missing in OSM. Furthermore, having the names of substations can also help locate them. </p>
+<div style="float: right; margin: 5px 0 20px 20px; width: 350px;">
+    <img src="../images/bangladeshawesome.jpg" class="img-border" alt="GEM Angola Data Example in JOSM">
+    <figcaption class="image-caption">Offical transmission grid map of Power Grid Bangladesh PLC.</figcaption>
+</div>
+
+<p>We have made an <a href="https://ohmygrid.org/awesome/">awesome list</a> which you can access on this website too, which has datasets, maps, and information for many countries around the world.</p>
+<p>⚠️ Please use these datasets as hint layers, and check licenses to see how/if you are allowed to use them. Do not copy/data from these maps directly into OpenStreetMap. Each data point of the transmission network must be set manually and <a href="https://wiki.openstreetmap.org/wiki/Verifiability">verified</a> with official satellite data provided by the OpenStreetMap community.⚠️</p>
+<h2 id="open-infrastructure-map-nighttime-lights-and-osmose"><div class="tools-header">Open Infrastructure Map - Nighttime Lights and Osmose </div></h2></h2>
+<div style="float: right; margin: 5px 0 20px 20px; width: 350px;">
+    <img src="../images/openinfraosmose.jpg" class="img-border" alt="Open Infrastructure Map - Osmose">
+    <figcaption class="image-caption">Open Infrastructure Map also includes the osmose issus in the grid as another layer.</figcaption>
+</div>
+
+<ol>
+<li>Open Infrastructure Map can be used as a tool to map and find issues by utilising the nighttime lights feature.</li>
+<li>Go to the <a href="https://openinframap.org/#2/26/12">website</a> and set the background to nighttime lights. This can help see clear "holes" in a country's grid.</li>
+<li>In layers, activate the power validation feature. If you zoom in and find an unfinished power line, you can see the osmose issue affiliated to this line.</li>
+</ol>
+<h2 id="find-new-lines-that-branch-off-from-substations"><div class="tools-header">Find new lines that branch off from substations </div></h2></h2>
+<div style="float: right; margin: 5px 0 20px 20px; width: 350px;">
+  <img src="../images/substation_malawi.jpg" class="img-border" alt="Substation in Malawi with unmapped interconnector in the left corner">
+  <figcaption class="image-caption">A substation in Malawi with an unmapped interconnector in the left corner.</figcaption>
+</div>
+
+<p>A simple yet efficient strategy for mapping the transmission grid is to check every substation for new lines branching out from it. 
+As most national transmission grids are entirely connected, this strategy enables you to trace and therefore map the entire grid network. 
+One single unmapped power tower can sometimes trace to a missing interconnector to another country as shown in the image of a substation in Malawi.
+Can you see the power tower that's missing from the bottom Left corner?</p>
+<h2 id="online-investigation"><div class="tools-header">Online investigation 🔍</div></h2>
+<p>Looking for recent news articles, reports, academic studies, or datasets related to newly operational substations and transmission lines is a simple way to find information about larger infrastructure that just started construction or operation. Politicians and investors love to be photographed with such new infrastructure. That's why you find almost always news articles and reports about new substations, transmission lines and power plants.</p>
+<div style="float: right; margin: 5px 0 20px 20px; width: 350px;">
+    <img src="../images/mapstrats.jpg" class="img-border" alt="A wind farm in Bangladesh displayed in OpenStreetMap">
+    <figcaption class="image-caption">A wind farm in Bangladesh displayed in OpenStreetMap that has been discovered by offical documents.</figcaption>
+</div>
+
+<p>Local Large Language Models (LLMs) can help by conducting searches in the country’s official language. For example: “Please search for news articles, reports, academic studies, or datasets about transmission lines or substations opened in Country A in the last 5 years. Use the official language of the country A. Only include resources not already listed in the <a href='https://github.com/open-energy-transition/Awesome-Electric-Grid-Mapping'>Awesome Electric Grid Mapping</a> repository.”</p>
+<p>Please be aware of the licence and quality of the documents you are finding. If you cannot validate the information you find by different sources, you can at least use the names of substations, regions and towns to identify the locations of new substations or transmission lines, and verify their visibility in satellite images. The fastest way to search global power infrastructure like power plants, substations or country interconnector by name is by the search function of <a href="https://openinframap.org/#2/26/12">Open Infrastructure Map</a>.</p>
+<h2 id="using-the-mapcss-to-locate-holes-in-the-grid"><div class="tools-header">Using the mapcss to locate "holes" in the grid </div></h2>
+<ol>
+<li>Another fast and efficient way to locate transmission lines that are unfinished, is to simply use the mapcss and look for unfinished lines. A lack of lines in a large area, could also tell you that a line might be missing there. </li>
+<li>If you haven't yet added our mapcss to JOSM, you can find it <a href="https://github.com/open-energy-transition/grid-mapping-starter-kit/tree/main/josm-config">here.</a></li>
+</ol>
+<div style="float: right; margin: 5px 0 20px 20px; width: 350px;">
+      <img src="../images/mapcss_tool.jpg" class="img-border" alt="Mapcss of Bosnia displayed in OpenStreetMap">
+      <figcaption class="image-caption">Mapcss layer of the Bosnian transmission grid in JOSM.</figcaption>
+</div>
+
+<h2 id="openstreetmap-and-wikidata-comparison-tool-integrated-in-map-it"><div class="tools-header">OpenStreetMap and Wikidata comparison tool (integrated in Map It 📍)</div></h2></h2>
+<p>This <a href="https://github.com/open-energy-transition/osm-wikidata-comparison/">repository</a> contains two Python scripts that compare power plant data between OpenStreetMap (OSM) and Wikidata, and also substation data.The power plant tool fetches data from both sources using APIs, performs comparisons based on geographic proximity
+and name, and identifies missing power plants or coordinate mismatches. The comparison results are saved in CSV and GeoJSON formats.</p>
+<div style="float: right; margin: 5px 0 20px 20px; width: 350px;">
+    <img src="../images/wikigeo.jpg" class="img-border" alt="Wikidata Comparison GeoJSON Output">
+    <figcaption class="image-caption">Wikidata Comparison GeoJSON Output(red) in comparision to grid data(green).</figcaption>   
+</div>
+
+<h3 id="how-to-use-the-osmwikidata-powerplant-comparison-tool">How to use the OSM‑Wikidata powerplant comparison tool</h3></h3>
+<ol>
+<li>This tool is integrated into <a href="https://ohmygrid.org/map-it/">Map It📍</a>.</li>
+<li>Click on the WikiData button.</li>
+<li>Select the infrastructure you are looking for from the drop-down menu.</li>
+<li>Drag and drop the GeoJSON file into JOSM.</li>
+<li>If you want to work with the command line tool directly, please refer to the instructions in the repository's <a href="https://github.com/open-energy-transition/osm-wikidata-toolset/">README</a>.</li>
+</ol>
+<h2 id="downloading-transmission-data-of-an-area-near-a-border"><div class="tools-header">Downloading transmission data of an area near a border 📥</div></h2>
+<div style="float: right; margin: 5px 0 20px 20px; width: 350px;">
+    <img src="../images/alternative_query.png" class="img-border" alt="Overpass Query Example" style="width:100%; float:right; margin: 5px 0 30px 20px;">
+    <figcaption class="image-caption">Overpass Query Example</figcaption>
+</div>
+
+<p>If you are mapping an interconnector between two countries and want to see what’s mapped on the “other” side of the border, you can either do a quick Download from OSM in a new layer or use the following Overpass query:</p>
+<ol>
+<li>Copy this <a href="https://raw.githubusercontent.com/open-energy-transition/osm-grid-definition/refs/heads/main/queries/Default/admin4.overpassql">query</a> and paste it into “Download from Overpass API” in JOSM.</li>
+<li>Draw a small bounding box in the slippy map, then run the query to download.</li>
+<li><p><strong>Explanation:</strong> The query finds nodes in your bounding box, detects their admin area (level 4 by default), and fetches all power infrastructure within it. You can adjust the “admin level” in the query (e.g. level 2 for national, level 6 for province) by editing the <code>admin_level</code> parameter in the download tab. A smaller bounding box is better (faster execution).</p></li>
+</ol>
+<h2 id="bing-attribution-issue"><div class="tools-header">Bing attribution issue ⛔</div></h2>
+<div style="float: right; margin: 5px 0 20px 20px; width: 350px;">
+    <img src="../images/bing_issue.png" class="img-border" width="300" alt="Bing Attribution in JOSM">
+    <figcaption class="image-caption">Bing attribution error in JOSM</figcaption>
+</div>
+
+<p>At the moment, there seems to be an issue with Bing attribution in JOSM where it only loads in the mornings (CET). To work around this:</p>
+<ol>
+<li>On a day when Bing attribution is working, copy the <code>bing.attribution.xml</code> file from your JOSM folder to a safe place:<ul>
+<li><strong>Windows:</strong> <code>%APPDATA%\JOSM\bing.attribution.xml</code></li>
+<li><strong>Mac:</strong> <code>~/Library/Caches/JOSM/bing.attribution.xml</code></li>
+<li><strong>Linux:</strong> <code>~/.cache/JOSM/bing.attribution.xml</code></li>
+</ul>
+</li>
+<li>On a day when it isn’t working, replace the broken file with your saved copy, then restart or reload JOSM.</li></li>
+</ol>
+<h2 id="google-maps-substations"><div class="tools-header"> 🚫 Google Maps substations 🚫 </div></h2></h2>
+<p>Google Maps would be the perfect additional data source for the locations and names of substations worldwide, but so far <strong>no official authorisation has been granted</strong> for using the location of substation within OpenStreetMap. Google Maps shows many transmission and distribution substations that are difficult to locate using current mapping strategies, particularly in remote areas of low- and middle-income countries.</p>
+<div style="float: right; margin: 5px 0 20px 20px; width: 350px;">
+    <img src="../images/angolagoogle.jpg" class="img-border" alt="Google Maps Satellite view showing substations in Angola">
+    <figcaption class="image-caption"> An Angola distribution substation missing in OpenStreetMap. Imagery ©2025 CNES/Airbus, Maxar Technologies. Map data ©2025 
+</div>
+
+<p>Knowing only the locations of these substations would greatly accelerate the progress of grid mapping and allow the discovery of smaller substations that are relevant for estimating distribution network coverage and rural electrification levels. Together with the OpenStreetMap community, the data can be integrated using officially authorised satellite images for OpenStreetMap contributors, <strong>if</strong> permission is granted!
+Google Maps has <strong>not</strong> yet granted official authorisation for the use of its data. Google would provide a significant boost to the sustainable energy transition, tackling climate change and bringing electricity to rural communities at the same time. Therefore, we are kindly requesting formal permission to access and utilize the coordinates of ‘electrical substations’ displayed on Google Maps, for the purpose of enriching OpenStreetMap and advancing global grid mapping initiatives. </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer"> Creative Commons Attribution 4.0 International License   </a> -  <a href="https://ohmygrid.org/privacy-policy/"> Read our Privacy Policy</a>
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.indexes", "toc.integrate", "search.highlight", "search.suggest", "navigation.top", "content.image.zoom"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../js/umami.js"></script>
+      
+    
+  </body>
+</html>
