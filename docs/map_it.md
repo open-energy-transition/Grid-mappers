@@ -409,7 +409,7 @@ async function handleAreaClick(iso, level, layer) {
     layer.setStyle({ color: '#3388ff' });
     layer
       .getPopup()
-      .setContent(`<b>${name}</b><br>Click to load in JOSM`)
+      .setContent(`<b>${name}</b><br>Click to load in JOSM.  ⚠️ If it doesn't work, it might be your ad-blocker, or you haven't enabled remote control! Sometimes you might need to turn on and off remote control for it to refresh.`)
       .update();
   }, 2000);
 }
