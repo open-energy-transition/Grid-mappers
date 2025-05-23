@@ -5,6 +5,9 @@ on:
   schedule:
     - cron: '0 2 * * 0'   # runs every Sunday at 2 UTC
 
+permissions:
+  contents: write
+
 jobs:
   fetch-towers:
     runs-on: ubuntu-latest
