@@ -51,7 +51,9 @@ jobs:
           JSON
 
       - name: Commit & push if changed
-        uses: stefanzweifel/git-auto-commit-action@v6.1.5
+        uses: EndBug/add-and-commit@v9
         with:
-          commit_message: "chore: weekly tower count (${{ steps.run-query.outputs.count }})"
-          file_pattern: docs/data/tower-count.json
+          author_name: github-actions[bot]
+          author_email: github-actions[bot]@users.noreply.github.com
+          message: chore: weekly tower count (${{ steps.run-query.outputs.count }})
+          add: docs/data/tower-count.json
