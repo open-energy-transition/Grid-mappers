@@ -12,7 +12,7 @@ body_class: landing-page
     <p class="mission-statement"> We empower individuals, communities and nations around the world to map the electrical grid.
     </p>
     <div class="primary-link">
-     <a href="https://ohmygrid.org/map_it/" target="_blank" rel="noopener">
+     <a href="https://ohmygrid.org/map-it/" target="_blank" rel="noopener">
     <span class="primary-icon">🌍</span>
     Map It 📍
      </a>

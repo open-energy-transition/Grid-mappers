@@ -10,14 +10,14 @@ The following strategies and tooles will help you to extend the existing transmi
     <figcaption class="image-caption">Osmose will provide you with a GeoJSON file containing the power issues you selected for the country you specified. In this case, it is Namibia. </figcaption>
 </div>
 
-This tool is integrated in [Map It📍](https://ohmygrid.org/map_it/), but can also be found at <a href="https://open-energy-transition.github.io/osmose_per_country/">this</a> front end interface. The tool allows fetching data on gaps in the OSM data through the OSMOSE API on a country level.</p>
+This tool is integrated in [Map It📍](https://ohmygrid.org/map-it/), but can also be found at <a href="https://open-energy-transition.github.io/osmose_per_country/">this</a> front end interface. The tool allows fetching data on gaps in the OSM data through the OSMOSE API on a country level.</p>
 
 ### What is Osmose?
 <a href="https://osmose.openstreetmap.fr/en/map/">Osmose-QA</a> is a quality assurance tool that detects issues in OpenStreetMap data". These include different classes of issues, such as "unfinished power transmission lines.
 
 ### How to use the Osmose per country tool</h3>
-1. Click on the Osmose issues button in [Map It📍](https://ohmygrid.org/map_it/) or go to the tool interface <a href="https://open-energy-transition.github.io/osmose_per_country/">website</a>.
-2. In [Map It📍](https://ohmygrid.org/map_it/), you can simply choose the issue you want to look at, and then click on a country/region. This will download a geojson file for you which you can open in JOSM and use as a hint layer
+1. Click on the Osmose issues button in [Map It📍](https://ohmygrid.org/map-it/) or go to the tool interface <a href="https://open-energy-transition.github.io/osmose_per_country/">website</a>.
+2. In [Map It📍](https://ohmygrid.org/map-it/), you can simply choose the issue you want to look at, and then click on a country/region. This will download a geojson file for you which you can open in JOSM and use as a hint layer
 Tip: On the tool website, certain countries have different names associated, so to fetch the data for the entire country use an asterisk (wildcard) like: <code>France*</code>
 
 
@@ -31,13 +31,13 @@ Tip: On the tool website, certain countries have different names associated, so 
 
 
 ### How to use the GEM power plants per country tool</h3>
-1. Click on the Global Energy Monitor Power Plant button in [Map It📍](https://ohmygrid.org/map_it/) or go to the <a href="https://open-energy-transition.github.io/gem_per_country/">website</a>.
-1. In [Map It📍](https://ohmygrid.org/map_it/), you can simply choose the issue you want to look at, and then click on a country/region. This will download a geojson file for you.
+1. Click on the Global Energy Monitor Power Plant button in [Map It📍](https://ohmygrid.org/map-it/) or go to the <a href="https://open-energy-transition.github.io/gem_per_country/">website</a>.
+1. In [Map It📍](https://ohmygrid.org/map-it/), you can simply choose the issue you want to look at, and then click on a country/region. This will download a geojson file for you.
 1. On the website, type the name of the country you want data for. Press preview, and download the geojson file.
 1. You can open this geojson file in JOSM, where you will be able to see all power plants from the GEM database.
 
 ### How to use the GEM power plants per country tool</h3>
-1. Click on the Global Energy Monitor Power Plant button in [Map It📍](https://ohmygrid.org/map_it/) or go to the <a href="https://open-energy-transition.github.io/gem_per_country/">website</a>.
+1. Click on the Global Energy Monitor Power Plant button in [Map It📍](https://ohmygrid.org/map-it/) or go to the <a href="https://open-energy-transition.github.io/gem_per_country/">website</a>.
 1. In Map It📍, you can simply choose the issue you want to look at, and then click on a country/region. This will download a geojson file for you.
 1. On the website, type the name of the country you want data for. Press preview, and download the geojson file.
 1. You can open this geojson file in JOSM, where you will be able to see all power plants from the GEM database.
@@ -51,7 +51,7 @@ OpenStreetMap allows mappers to quickly mark an object that seems to be wrong an
   <figcaption class="image-caption">Fixme tags loaded in the todo list.</figcaption>
 </div>
 
-1. Download the grid you want to look into using at the [Map It📍](https://ohmygrid.org/map_it/) page.
+1. Download the grid you want to look into using at the [Map It📍](https://ohmygrid.org/map-it/) page.
 2. Press `STRG+F`and search for `fixme=*`.
 3. In the todo list window press `Add`.
 4. After you fixed and issues please remove the fixme tag.
@@ -144,7 +144,7 @@ and name, and identifies missing power plants or coordinate mismatches. The comp
 </div>
 
 ### How to use the OSM‑Wikidata powerplant comparison tool</h3>
-1. This tool is integrated into [Map It📍](https://ohmygrid.org/map_it/).
+1. This tool is integrated into [Map It📍](https://ohmygrid.org/map-it/).
 2. Click on the WikiData button.
 3. Select the infrastructure you are looking for from the drop-down menu.
 4. Drag and drop the GeoJSON file into JOSM.

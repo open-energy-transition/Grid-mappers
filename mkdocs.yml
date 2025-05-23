@@ -7,12 +7,12 @@ repo_url: 'https://github.com/open-energy-transition/Oh-my-Grid'
 nav:
   - The Initiative 🚀: index.md
   - Starter-Kit Tutorial 🌱: starter-kit.md
-  - Map It! 📍: map_it.md
+  - Map It! 📍: map-it.md
   - Tools and Strategies 🛠️: tools.md
   - Awesome List 🌟: awesome.md
   - FAQ ⚡: FAQ.md
   - Impact Analysis 🤝: impact.md
-  - Our Progress 🌐 : PROGRESS.md
+  - Our Progress 🌐 : progress.md
   - Blog 💭:
       2025:
         - "Liberate the Grid": blog/firstrename.md

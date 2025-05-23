@@ -221,7 +221,7 @@ Below is a high level legend of the color styles of the mapcss<br>
   width="300">
 
 ## **<div class="tools-header">Loading power infrastructure into JOSM :inbox_tray:</div>**
-Make sure remote control is enabled and ad-blocker disabled, and then go to the start mapping [page](https://ohmygrid.org/map_it/). Here you can click on the country you want to map, and it will directly open JOSM and load the data of that country. Use the "Default" to pull the data. <br>
+Make sure remote control is enabled and ad-blocker disabled, and then go to the start mapping [page](https://ohmygrid.org/map-it/). Here you can click on the country you want to map, and it will directly open JOSM and load the data of that country. Use the "Default" to pull the data. <br>
 
 ## **<div class="tools-header">How to Map and upload your progress :outbox_tray:</div>**
 <img 
@@ -250,7 +250,7 @@ Make sure remote control is enabled and ad-blocker disabled, and then go to the 
 :pencil: Example
 A simple but very efficient way of mapping the network is the continuation of “Unfinished Transmission Lines”:
 
-1. Download the [Unfinished Power Transmission lines (Class 2) via Osmose](https://ohmygrid.org/map_it/) for your country.
+1. Download the [Unfinished Power Transmission lines (Class 2) via Osmose](https://ohmygrid.org/map-it/) for your country.
 1. Drag and drop the downloaded geojson file into JSOM.
 1. Download the todo plugin for JSOM. Edit --> Preferences. Search for todo, mark it and press OK. Press Windows --> todo list to show the todo list window. 
 1. Press STRG+A (CTRL + A or COMMAND + A)  to select all issues in the new layer. Press the Add in the todo plugin window.
