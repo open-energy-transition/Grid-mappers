@@ -51,7 +51,7 @@ jobs:
           JSON
 
       - name: Commit & push if changed
-        uses: stefanzweifel/git-auto-commit-action@v6
+        uses: stefanzweifel/git-auto-commit-action@v6.1.5
         with:
           commit_message: "chore: weekly tower count (${{ steps.run-query.outputs.count }})"
           file_pattern: docs/data/tower-count.json
