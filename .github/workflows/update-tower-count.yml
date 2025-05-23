@@ -1,10 +1,9 @@
 name: Update tower count
 
 on:
-  workflow_dispatch:    # allows you to “Run workflow” by hand
-  schedule: # every Sunday at 2 UTC
-    - cron: '0 2 * * 0'
-
+  workflow_dispatch: {}  # enables manual trigger
+  schedule:
+    - cron: '0 2 * * 0'   # runs every Sunday at 2 UTC
 
 jobs:
   fetch-towers:
@@ -33,15 +32,12 @@ jobs:
           out count;
           EOF
 
-          # run query & capture count
           COUNT=$(curl -s --data-urlencode "data@query.overpassql" \
             https://overpass-api.de/api/interpreter \
             | jq -r '.elements[0].count // .elements[0].tags.total // 0')
 
-          # expose COUNT as an output
-          echo "::set-output name=count::$COUNT"
+          echo "count=$COUNT" >> $GITHUB_OUTPUT
 
-          # write JSON file
           mkdir -p docs/data
           cat << JSON > docs/data/tower-count.json
           {
@@ -55,5 +51,5 @@ jobs:
         with:
           author_name: github-actions[bot]
           author_email: github-actions[bot]@users.noreply.github.com
-          message: chore: weekly tower count (${{ steps.run-query.outputs.count }})
+          message: "chore: weekly tower count (${{ steps.run-query.outputs.count }})"
           add: docs/data/tower-count.json
